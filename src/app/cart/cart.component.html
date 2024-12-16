@@ -1,0 +1,46 @@
+<div class="pharmacy-home">
+    <header class="header">
+      <!-- Обернули логотип в ссылку для перехода на главную страницу -->
+      <a routerLink="/" class="logo">
+        <img src="images/logo.png" alt="Pharmacy Logo" class="logo-image" />
+        <span>Pharmacy</span>
+      </a>
+      <a [routerLink]="['/cart']" class="cart-link">
+        <img src="images/cart.png" alt="Cart" class="cart-icon" />
+      </a>
+      <a href="/login" class="account">Мой аккаунт</a>
+    </header>  
+  
+    <div class="cart-page">
+      <h1>Моя корзина</h1>
+      <div *ngIf="cartItems.length; else emptyCart" class="cart-items">
+        <ul>
+          <li *ngFor="let item of cartItems " class="cart-item">
+            <img [src]="item.detailedImage" [alt]="item.name" class="cart-item-image" />
+            <div class="cart-item-details">
+              <span class="cart-item-name">{{ item.name }}</span>
+              <span class="cart-item-price">{{ item.price }} ₽</span>
+              <div class="cart-item-quantity">
+                <button (click)="decreaseQuantity(item)" class="quantity-button">-</button>
+                <span>{{ item.quantity }}</span>
+                <button (click)="increaseQuantity(item)" class="quantity-button">+</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+  
+        <div class="cart-total">
+          <span>Общая сумма:</span>
+          <span>{{ getTotalPrice()}} ₽</span>
+        </div>
+  
+        <button (click)="clearCart()" class="clear-cart-button">Очистить корзину</button>
+        <button class="checkout-button">Оформить заказ</button>
+      </div>
+  
+      <ng-template #emptyCart>
+        <p class="empty-cart-message">Корзина пуста.</p>
+      </ng-template>
+    </div>
+  </div>
+  

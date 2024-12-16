@@ -1,0 +1,71 @@
+<div>
+    <h2>Редактировать пользователя</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div>
+        <label for="name">Имя</label>
+        <input 
+          id="name" 
+          name="name" 
+          [(ngModel)]="user.name" 
+          required 
+          #name="ngModel" 
+          [ngClass]="{ 'input-error': name.invalid && name.touched }"
+        />
+        <div *ngIf="name.invalid && name.touched" class="error-message">
+          Имя обязательно для заполнения.
+        </div>
+      </div>
+  
+      <div>
+        <label for="email">Email</label>
+        <input 
+          id="email" 
+          name="email" 
+          [(ngModel)]="user.email" 
+          required 
+          email 
+          #email="ngModel" 
+          [ngClass]="{ 'input-error': email.invalid && email.touched }"
+        />
+        <div *ngIf="email.invalid && email.touched" class="error-message">
+          Введите корректный email.
+        </div>
+      </div>
+  
+      <div>
+        <label for="password">Пароль</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="user.password" 
+          required 
+          minlength="6" 
+          #password="ngModel" 
+          [ngClass]="{ 'input-error': password.invalid && password.touched }"
+        />
+        <div *ngIf="password.invalid && password.touched" class="error-message">
+          Пароль должен быть минимум 6 символов.
+        </div>
+      </div>
+  
+      <div>
+        <label for="confirmPassword">Подтвердите пароль</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          name="confirmPassword" 
+          [(ngModel)]="user.confirmPassword" 
+          required 
+          #confirmPasswordField="ngModel" 
+          [ngClass]="{ 'input-error': confirmPasswordField.touched && user.confirmPassword !== user.password }"
+        />
+        <div *ngIf="confirmPasswordField.touched && user.confirmPassword !== user.password" class="error-message">
+          Пароли не совпадают.
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="form.invalid">Обновить</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,205 @@
+/* Общие стили для страницы корзины */
+.cart-page {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between; /* Разделяет элементы на противоположные стороны */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    flex-grow: 1; /* Логотип займет всё доступное пространство */
+    text-decoration: none; /* Убираем подчеркивание */
+    outline: none; /* Убираем эффект нажатия */
+    color: inherit; /* Устанавливаем цвет текста таким же, как у родительского элемента */
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    position: relative; 
+  }
+  
+  .logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .logo:hover {
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    cursor: pointer; /* Меняем курсор на указатель */
+  }
+  
+  .account {
+    display: inline-block; /* Чтобы элемент вёл себя как кнопка */
+    background-color: #e0e0e0; /* Серый фон */
+    color: #333; /* Цвет текста */
+    font-size: 16px;
+    padding: 8px 16px; /* Отступы для кнопки */
+    border-radius: 20px; /* Закругленные углы */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    transition: background-color 0.3s ease; /* Плавный переход при наведении */
+    cursor: pointer; /* Курсор как у кнопки */
+  }
+  
+  .account:hover {
+    background-color: #bdbdbd; /* Цвет фона при наведении */
+  }
+  
+  .cart-link {
+    display: flex;
+    align-items: center;
+    position: relative; /* Используем для точной настройки отступов */
+    right: 20px; /* Левый отступ от кнопки */
+  }
+  
+  .cart-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  /* Стили для списка товаров в корзине */
+  .cart-items {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    gap: 20px;
+  }
+  
+  .cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  
+  /* Контейнер для деталей товара */
+  .cart-item-details {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    flex-grow: 1;
+  }
+  
+  .cart-item-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px; /* Отступ между названием и ценой */
+  }
+  
+  .cart-item-price {
+    font-size: 18px;
+    color: #00c853;
+    margin-bottom: 10px; /* Отступ между ценой и кнопками количества */
+  }
+  
+  /* Стили для кнопок изменения количества */
+  .cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Горизонтальное расположение кнопок */
+  }
+  
+  .quantity-button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #00c853;
+    border: none;
+    border-radius: 50%; /* Круглая форма кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .quantity-button:hover {
+    background-color: #00a846; /* Более тёмный цвет при наведении */
+    transform: scale(1.1); /* Лёгкое увеличение кнопки */
+  }
+  
+  .quantity-button:active {
+    transform: scale(0.95); /* Сжатие кнопки при нажатии */
+  }
+  
+  /* Стили для общей суммы */
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .clear-cart-button,
+  .checkout-button {
+    background-color: #00c853;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .clear-cart-button:hover,
+  .checkout-button:hover {
+    background-color: #00a846;
+  }
+  
+  /* Стили для пустой корзины */
+  .empty-cart-message {
+    text-align: center;
+    font-size: 20px;
+    color: #ff5722;
+  }
+  
+  /* Контейнер для цен */
+  .cart-prices {
+  display: flex;
+  flex-direction: column; /* Расположение в столбец */
+  align-items: flex-end; /* Выравнивание по правому краю */
+  margin-top: 20px; /* Отступ сверху */
+  gap: 10px; /* Расстояние между ценами */
+  }
+  
+  .cart-item-price {
+  font-size: 18px;
+  color: #00c853; /* Цвет текста */
+  }
+  

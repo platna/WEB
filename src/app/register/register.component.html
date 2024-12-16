@@ -1,0 +1,57 @@
+<div class="auth-container">
+    <div class="auth-box">
+      <h2>Регистрация</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" formControlName="name" class="form-control" 
+                 placeholder="Введите ваше имя" [appHighlight]="(registerForm.get('name')?.invalid && registerForm.get('name')?.touched) || false">
+          <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid" class="error-message">
+            Имя обязательно.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Электронная почта</label>
+          <input type="email" id="email" formControlName="email" class="form-control" 
+                 placeholder="Введите ваш email" [appHighlight]="(registerForm.get('email')?.invalid && registerForm.get('email')?.touched) || false">
+          <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="error-message">
+            Введите корректный email.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" formControlName="password" class="form-control" 
+                 placeholder="Введите ваш пароль" [appHighlight]="(registerForm.get('password')?.invalid && registerForm.get('password')?.touched) || false">
+        
+          <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="error-message">
+            Пароль обязателен (минимум 6 символов).
+          </div>
+        
+          <div *ngIf="registerForm.get('password')?.value" class="password-strength" 
+               [ngStyle]="{ 'color': (registerForm.get('password')?.value | passwordStrength)?.color }">
+            Сила пароля: {{ (registerForm.get('password')?.value | passwordStrength)?.strength }}
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="confirmPassword">Подтвердите пароль</label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" 
+                 placeholder="Подтвердите ваш пароль" 
+                 [appHighlight]="(registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched) || false">
+          
+          <div *ngIf="registerForm.get('confirmPassword')?.hasError('mustMatch') && registerForm.get('confirmPassword')?.touched" class="error-message">
+            Пароли не совпадают.
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Зарегистрироваться</button>
+  
+        <div class="text-center signin-link">
+          <p>Есть аккаунт? <a (click)="navigateToLogin()" class="link">Войти</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  

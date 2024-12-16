@@ -1,0 +1,81 @@
+<div class="pharmacy-home">
+  <header class="header">
+    <a routerLink="/" class="logo">
+      <img src="images/logo.png" alt="Pharmacy Logo" class="logo-image" />
+      <span>Pharmacy</span>
+    </a>
+    <a [routerLink]="['/cart']" class="cart-link">
+      <img src="images/cart.png" alt="Cart" class="cart-icon" />
+    </a>
+    <a href="/login" class="account">Мой аккаунт</a>
+    <button (click)="logout()">Выйти</button>
+  </header>
+
+  <div class="profile-container">
+    <h2>Профиль</h2>
+    <p>Управляйте своей личной информацией</p>
+    <button (click)="deleteUserProfile()">Удалить профиль</button>
+    <h3>Детали аккаунта</h3>
+
+    <form [formGroup]="profileForm">
+      <div class="form-group">
+        <label for="name">Имя</label>
+        <div class="input-container">
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control"
+            placeholder="Введите ваше имя"
+          />
+          <button type="button" (click)="saveChanges('name')">Сохранить</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-container">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Введите ваш email"
+          />
+          <button type="button" (click)="saveChanges('email')">Сохранить</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Пароль</label>
+        <div class="input-container">
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Введите ваш пароль"
+          />
+          <button type="button" (click)="saveChanges('password')">Сохранить</button>
+        </div>
+      </div>
+    </form>
+
+    <div *ngIf="favorites && favorites.length > 0; else noFavorites">
+      <h3>Избранные товары</h3>
+      <div class="favorites-container">
+        <div *ngFor="let product of favorites" class="favorite-item">
+          <img [src]="product.detailedImage" alt="{{ product.name }}" class="favorite-item-image" />
+          <div class="favorite-item-details">
+            <h3>{{ product.name }}</h3>
+            <p>Цена: {{ product.price }} ₽</p>
+          </div>
+          <button (click)="removeFromFavorites(product)">Удалить</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFavorites>
+      <p>У вас нет избранных товаров.</p>
+    </ng-template>
+  </div>
+</div>

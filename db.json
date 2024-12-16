@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "name": "pttort",
+      "email": "fddfds@mail.ru",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Витамины для иммунной системы",
+      "category": "Витамины и добавки",
+      "price": 500,
+      "description": "Комплекс витаминов для укрепления иммунной системы.",
+      "image": "images/Vitamins_Supplements.jpg",
+      "detailedImage": "images/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Обезболивающее средство",
+      "category": "Облегчение боли",
+      "price": 350,
+      "description": "Быстрое обезболивающее средство от головной боли.",
+      "image": "images/obleghchenie_boli.jpg",
+      "detailedImage": "images/2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Средство от простуды",
+      "category": "Сироп от простуды и гриппа",
+      "price": 250,
+      "description": "Обезболивающий сироп от кашля и простуды.",
+      "image": "images/kashel-u-doroslyh-scaled.jpg",
+      "detailedImage": "images/3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Аптечка первой помощи",
+      "category": "Первая помощь",
+      "price": 800,
+      "description": "Полный набор для оказания первой помощи.",
+      "image": "images/First_aid.jpg",
+      "detailedImage": "images/4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Пробиотики для пищеварения",
+      "category": "Здоровье пищеварительной системы",
+      "price": 400,
+      "description": "Пробиотики для нормализации пищеварения.",
+      "image": "images/Digestive_health.jpg",
+      "detailedImage": "images/5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Капли для ушей",
+      "category": "Уход за ушами",
+      "price": 500,
+      "description": "Капли для ухода за ушами и предотвращения воспалений.",
+      "image": "images/ears.jpg",
+      "detailedImage": "images/6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Капли для ухода за глазами",
+      "category": "Уход за глазами",
+      "price": 350,
+      "description": "Капли для снятия усталости и раздражения с глаз.",
+      "image": "images/8ebcyltl9r83rcwyweuic0lejauagtck.jpg",
+      "detailedImage": "images/7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Крем для ног",
+      "category": "Уход за ногами",
+      "price": 300,
+      "description": "Увлажняющий крем для ухода за кожей ног.",
+      "image": "images/towfiqu-barbhuiya-uoyv29mn9am-unsplash.jpg",
+      "detailedImage": "images/8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Зубная паста",
+      "category": "Уход за полостью рта",
+      "price": 150,
+      "description": "Зубная паста с мятным вкусом для ежедневного ухода.",
+      "image": "images/rot.jpg",
+      "detailedImage": "images/9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Средства для сна",
+      "category": "Средства для сна и борьбы с храпом",
+      "price": 500,
+      "description": "Средства для улучшения сна и борьбы с храпом.",
+      "image": "images/BLOG_HRAP.jpg",
+      "detailedImage": "images/10.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Средства для отказа от курения",
+      "category": "Отказ от курения",
+      "price": 700,
+      "description": "Продукты для эффективного отказа от курения.",
+      "image": "images/kurenie.jpg",
+      "detailedImage": "images/11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Протеиновый порошок",
+      "category": "Спортивное питание",
+      "price": 1200,
+      "description": "Протеиновый порошок для наращивания мышечной массы.",
+      "image": "images/sport_pitanie.jpg",
+      "detailedImage": "images/12.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Органическое питание",
+      "category": "Здоровое питание",
+      "price": 800,
+      "description": "Комплекс для здорового питания на основе органических продуктов.",
+      "image": "images/zdororovoe_pitanie.jpg",
+      "detailedImage": "images/13.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Витамины для беременных",
+      "category": "Мама и малыш",
+      "price": 600,
+      "description": "Витамины для беременных женщин и поддержания здоровья малыша.",
+      "image": "images/mama_i_malysh.jpg",
+      "detailedImage": "images/14.jpg"
+    }
+  ],
+  "cart": [],
+  "favorites": [],
+  "config": {
+    "nextId": 1
+  }
+}

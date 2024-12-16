@@ -1,0 +1,48 @@
+<div class="pharmacy-home">
+
+    <header class="header">
+      <!-- Обернули логотип в ссылку для перехода на главную страницу -->
+      <a routerLink="/" class="logo">
+        <img src="images/logo.png" alt="Pharmacy Logo" class="logo-image" />
+        <span>Pharmacy</span>
+      </a>
+      <a [routerLink]="['/cart']" class="cart-link">
+        <img src="images/cart.png" alt="Cart" class="cart-icon" />
+      </a>
+      <a href="/login" class="account">Мой аккаунт</a>
+    </header>
+    
+    <main class="main-content">
+      <div class="hero-section">
+        <div class="hero-image">
+          <img src="images/pharmacy.jpg" alt="Medical supplies" />
+        </div>
+        <div class="hero-text">
+          <h1>Добро пожаловать в Pharmacy</h1>
+          <p>Получите ваши лекарства и рецепты с доставкой прямо к вашей двери. Мы также предлагаем широкий выбор товаров для здоровья и хорошего самочувствия.</p>
+          <div class="search-bar">
+            <img src="images/lupa.png" alt="Search" class="search-icon" />
+            <input 
+              type="search" 
+              placeholder="Введите запрос..." 
+              [(ngModel)]="searchQuery"/>
+            <button (click)="onSearch()">Поиск</button>
+          </div>
+        </div>
+      </div>
+  
+      <section class="categories">
+        <div *ngFor="let category of categories">
+          <div *ngFor="let product of productsByCategory[category.title]" class="category">
+            <!-- Клик только на изображении -->
+            <div (click)="goToProductDetail(product.id.toString())">
+              <img [src]="product.image" [alt]="product.name" />
+            </div>
+            <!-- Текст, по которому не происходит переход -->
+            <span>{{ product.name }}</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  

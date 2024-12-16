@@ -1,0 +1,27 @@
+<div class="pharmacy-home">
+    <header class="header">
+      <!-- Обернули логотип в ссылку для перехода на главную страницу -->
+      <a routerLink="/" class="logo">
+        <img src="images/logo.png" alt="Pharmacy Logo" class="logo-image" />
+        <span>Pharmacy</span>
+      </a>
+      <a [routerLink]="['/cart']" class="cart-link">
+        <img src="images/cart.png" alt="Cart" class="cart-icon" />
+      </a>
+      <a href="/login" class="account">Мой аккаунт</a>
+    </header>
+  
+    <div *ngIf="product" class="product-container">
+      <button (click)="addToFavorites(product)">Добавить в избранное</button>
+      <img [src]="product.detailedImage" [alt]="product.name" />
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <span>{{ product.price }} руб.</span>
+      <button (click)="addToCart(product)">Добавить в корзину</button>
+    </div>
+  
+    <div *ngIf="!product" class="not-found">
+      <p>Товар не найден.</p>
+    </div>
+  </div>
+  
